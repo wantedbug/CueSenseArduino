@@ -23,7 +23,7 @@ char* msgBuf = 0;
 // Length of the buffer
 int msgLen = 0;
 // Ready signal character
-char readyChar = "R";
+char readyChar = 'R';
 // Flag that indicates if the ready signal was sent
 bool readySent = false;
 // Counter for scroll loop
