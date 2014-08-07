@@ -212,3 +212,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+# Visual Micro files
+*.atsuo
+Visual Micro/
