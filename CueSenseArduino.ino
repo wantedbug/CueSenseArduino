@@ -78,18 +78,20 @@ void loop() {
 			if(termChar == c) {
 				// Clear LCD and set cursor to rightmost position
 				lcd.clear();
-				lcd.setCursor(15,0);
+				lcd.setCursor(16,0);
 				// Display the message
 				lcd.print(msgBuf);
 				// Store length of message for the scroll loop
-				msgLen = strlen(msgBuf);
-				scrollCounter = msgLen + 5; // a little breathing space between messages
+				//msgLen = strlen(msgBuf);
+				scrollCounter = msgLen + numDisplayColumns - 5; // a little breathing space between messages
 				// We haven't displayed the whole message yet, so reset readySent
 				readySent = false;
 				// Make a new buffer for the next message
 				refreshBuffer();
+				msgLen = 0;
 			} else {
 				strncat(msgBuf, &c, 1); // TODO: max length check
+				++msgLen;
 			}
 		}
 	}
